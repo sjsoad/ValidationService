@@ -22,8 +22,13 @@ public protocol ValidationService {
 
 open class DefaultValidationService: ValidationService {
 
+    public init() {}
+    
     public func validate(text: String, with rules: [Validatable], compoundRules: Bool = true) -> Bool {
         let results = rules.compactMap({ $0.isValid(text: text) })
+        if compoundRules {
+            return !results.contains(!compoundRules)
+        }
         return results.contains(!compoundRules)
     }
     
