@@ -19,7 +19,8 @@ open class LengthRule: Validatable {
     }
     
     public func isValid(text: String) -> Bool {
-        return text.count >= minLength && text.count <= maxLength
+        let lengthRange = minLength...maxLength
+        return lengthRange.contains(text.count)
     }
     
 }
