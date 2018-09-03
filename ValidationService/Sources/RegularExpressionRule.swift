@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class RegularExpressionRule: Validatable {
+public struct RegularExpressionRule: Validatable {
     
-    private var predicateFormat: String
-    private var regularExpression: String
+    private let predicateFormat: String
+    private let regularExpression: String
     
     public init(predicateFormat: String, regularExpression: String) {
         self.predicateFormat = predicateFormat

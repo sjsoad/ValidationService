@@ -6,12 +6,12 @@
 //  Copyright © 2018 Sergey Kostyan. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-open class LengthRule: Validatable {
+public struct LengthRule: Validatable {
     
-    private var minLength: Int
-    private var maxLength: Int
+    private let minLength: Int
+    private let maxLength: Int
     
     public init(minLength: Int, maxLength: Int) {
         self.minLength = minLength
