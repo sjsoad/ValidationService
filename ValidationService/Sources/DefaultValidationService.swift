@@ -10,4 +10,6 @@ import UIKit
 
 public struct DefaultValidationService: ValidationService {
 
+    public init() {}
+    
 }
