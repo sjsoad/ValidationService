@@ -16,7 +16,7 @@ public protocol ValidationService {
 public extension ValidationService {
     
     func validate(text: String, with rules: [Validatable]) -> Bool {
-        return rules.compactMap({ $0.isValid(text: text) }).contains(false)
+        return !rules.compactMap({ $0.isValid(text: text) }).contains(false)
     }
     
 }
